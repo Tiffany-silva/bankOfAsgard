@@ -464,7 +464,7 @@ const CountrySelect = ({ value, onChange }) => {
     return (
         <Autocomplete
             id="country-select-demo"
-            className="country-select"
+            className="mui-input country-select"
             options={countries}
             autoHighlight
             getOptionLabel={(option) => option.label}

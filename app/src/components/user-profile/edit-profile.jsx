@@ -21,6 +21,7 @@ import PropTypes from "prop-types";
 import { useAuthContext } from "@asgardeo/auth-react";
 import CountrySelect from "../country-select";
 import PasswordValidation from "../password-validation";
+import DatePicker from "../date-picker";
 
 const EditProfile = ({ userInfo, onUpdateSuccess, onCancel }) => {
 
@@ -153,7 +154,9 @@ const EditProfile = ({ userInfo, onUpdateSuccess, onCancel }) => {
                       </li>
                       <li>
                         <label>Date of Birth:</label>
-                        <input type="date" name="dob" placeholder="Date of Birth" value={formData.dob} onChange={(e) => setFormData({ ...formData, dob: e.target.value })} />
+                        <DatePicker
+                          value={formData.dob}
+                          onChange={(value) => setFormData({ ...formData, dob: value })} />
                       </li>
                       <li>
                         <label>Email:</label>

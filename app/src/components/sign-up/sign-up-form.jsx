@@ -22,6 +22,7 @@ import { useState } from "react";
 import axios from "axios";
 import PasswordValidation from "../password-validation";
 import CountrySelect from "../country-select";
+import DatePicker from "../date-picker";
 
 const SignUpForm = ({ accountType }) => {
 
@@ -114,15 +115,11 @@ const SignUpForm = ({ accountType }) => {
           />
         </div>
       </div>
-      
+
       <label htmlFor="dateOfBirth">Date of Birth</label>
-      <input
-        type="date"
-        placeholder="Date of Birth"
+      <DatePicker
         value={signupData.dateOfBirth}
-        onChange={(e) => setSignupData({ ...signupData, dateOfBirth: e.target.value })}
-        required
-      />
+        onChange={(value) => setSignupData({ ...signupData, dateOfBirth: value || "" })} />
 
       <label htmlFor="country">Country</label>
       <CountrySelect
